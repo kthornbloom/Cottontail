@@ -1,0 +1,74 @@
+/* DOCUMENT LIST ADDON
+=========================================*/
+.addon-document-list {
+}
+
+/* DOCUMENT LIST WRAP
+=========================================*/
+.document-list-wrap {
+	padding:$spacing;
+}
+
+.document-list-bar {
+	background:$primary;
+	padding:1em;
+	span {
+		font-weight: bold;
+		text-transform: uppercase;
+		color:#fff;
+	}
+	input {
+		float:right;
+	}
+}
+
+.document-list {
+	max-height: 50vh;
+	overflow: auto;
+	border: 1px solid rgba(0,0,0,.2);
+	a:link, a:visited {
+		display: block;
+		padding:1em 2em 1em 1em;
+		border-bottom: 1px solid rgba(0,0,0,.2);
+		position: relative;
+		overflow: hidden;
+		transition:$transition;
+	}
+	a:before {
+		content:'\f016';
+		font-family: fontawesome;
+		padding-right:5px;
+		font-size:.8em;
+	}
+	a:after {
+		content:'\f0ed';
+		color:#fff;
+		font-family: fontawesome;
+		position:absolute;
+		right:-40px;
+		top:50%;
+		transform:translateY(-50%);
+		font-size: 1.2em;
+		line-height: 1em;
+		transition:$transition;
+	}
+	a:hover {
+		background:rgba(0,0,0,.8);
+		color:#fff;
+	}
+	a:hover:after {
+		right:10px;
+	}
+}
+
+@media (max-width: 512px) {
+	.document-list-bar {
+		span {
+			display: block;
+		}
+		input {
+			float:none;
+			width:100%;
+		}
+	}
+}

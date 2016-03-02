@@ -1,0 +1,34 @@
+/* ACCORDIONS WRAP
+=========================================*/
+.accordions {
+	padding:$spacing;
+}
+
+/* ACCORDION TITLE
+=========================================*/
+.accordion-title {
+	padding:.5em;
+	background: rgba(0,0,0,.1);
+	margin-bottom: 1px;
+	i {
+		transition:$transition;
+	}
+}
+
+.accordion-title:hover {
+	background: rgba(0,0,0,.2);
+}
+
+.accordion-open, .accordion-open:hover {
+	background: rgba(0,0,0,.3);
+	i {
+		transform:rotate(180deg);
+	}
+}
+
+/* ACCORDION RESULT
+=========================================*/
+.accordion-result {
+	padding:1em 1em 1em 2em;
+	display: none;
+}

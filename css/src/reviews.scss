@@ -1,0 +1,51 @@
+.review {
+	padding: 10px;
+	margin-bottom:5px;
+	background: #eee;
+	border-radius: 4px;
+	line-height: 1.4em;
+	color: #4A3729;
+}
+.star-rating {
+	color:$primary;
+}
+
+.stars-wrap {
+    width:200px;
+    position:relative;
+    display: block;
+}
+.stars i {
+    display:inline-block;
+    width:20px;
+    height:15px;
+    background:#fff;
+    float:left;
+    text-align:center;
+}
+.stars-hover {
+    width:200px;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+.stars-hover a:link, .stars-hover a:visited {
+    float:left;
+    width:10px;
+    height:20px;
+}
+
+@media screen and (max-width: 1000px) {
+	.reviews-home-left, .reviews-home-right {
+		font-size:14px;
+	}
+}
+@media screen and (max-width: 720px) {
+	.reviews-home-left, .reviews-home-right {
+		padding:50px 15px;
+		display: block;
+		width:auto;
+	}
+}
+

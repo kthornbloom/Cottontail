@@ -1,0 +1,85 @@
+/* CAROUSEL ADDON
+=========================================*/
+.addon-carousel {
+}
+
+.carousel {
+	width:100%;
+	overflow: hidden;
+	position: relative;
+}
+
+.carousel-stage {
+	white-space: nowrap;
+	font-size: 0;
+	line-height: 0;
+	left:0px;
+	position: relative;
+	transition:$transition;
+}
+
+.notrans-carousel .carousel-stage{
+	transition:none!important;
+}
+
+.carousel-item {
+	width:calc(25% - #{$spacinghalf});
+	margin:$spacing;
+	display: inline-block;
+	img {
+		width:100%;
+		height: auto;
+	}
+}
+
+.carousel-prev {
+	position: absolute;
+	top:50%;
+	transform:translateY(-50%);
+	left: 1%;
+	font-size:1rem;
+	display: block;
+	background: #fff;
+	width:2rem;
+	height:2rem;
+	border-radius:50%;
+}
+
+.carousel-prev:before {
+	content:'';
+	display: block;
+	width:1rem;
+	height:1rem;
+	transform-origin: 50%;
+	transform: rotate(-45deg) scale(.5);
+	position: absolute;
+	top: .5rem;
+	left: .7rem;
+	border: 2px solid black;
+	border-right: 0;
+	border-bottom: 0;
+}
+
+.carousel-next {
+	@extend .carousel-prev;
+	right:1%;
+	left:auto;
+}
+
+.carousel-next:before {
+	transform: rotate(135deg) scale(.5);
+	top: .5rem;
+	left: .3rem;
+}
+
+@media (max-width: 720px) {
+	.carousel-item {
+		width:calc(33.3% - #{$spacinghalf});
+	}
+}
+
+@media (max-width: 512px) {
+	.carousel-item {
+		width:calc(50% - #{$spacinghalf});
+	}
+}

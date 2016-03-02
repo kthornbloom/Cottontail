@@ -1,0 +1,56 @@
+nav {
+	background: #eee;
+	li {
+		position: relative;
+	}
+	/* TOP LEVEL LI
+	=========================================*/
+	>ul>li{
+		display: inline-block;
+		vertical-align: top;
+		position: relative;
+		overflow: hidden;
+		a:link, a:visited {
+			display: block;
+			padding:1rem;
+		}
+		ul {
+			visibility: hidden;
+			opacity: 0;
+			transition: $transition;
+		}
+	}
+	li:hover{
+		overflow: visible;
+		background: $primary;
+		>ul{
+			visibility: visible;
+			opacity: 1;
+		}
+		> .has-menu:before {
+			transform:rotate(90deg);
+		}
+	}
+	>ul>li>ul {
+		position: absolute;
+		top:100%;
+		width: 15em;
+		background: #444;
+	}
+	>ul>li>ul>li ul {
+		position: absolute;
+		top:0;
+		left:100%;
+		width: 15em;
+		background: #ccc;
+	}
+}
+
+.has-menu:before {
+	content:'\f105';
+	font-family: 'fontawesome';
+	float:right;
+	padding-left:1em;
+	transform-origin:80% center;
+	transition:$transition;
+}

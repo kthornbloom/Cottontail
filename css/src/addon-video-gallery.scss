@@ -1,0 +1,42 @@
+/* CSS TO INCLUDE BEFORE CONTENT
+=========================================*/
+.video-gallery {
+	display: flex;
+	flex-wrap:wrap;
+	> div {
+		background-size:cover!important;
+		display: inline-block;
+		position: relative;
+		vertical-align: top;
+		width:calc(25% - #{$spacinghalf});
+		margin:$spacing;
+	}
+	img {
+		width:100%;
+		height:auto;
+	}
+}
+
+@media (max-width: 960px) {
+	.video-gallery {
+		> div {
+			width:calc(33.3% - #{$spacinghalf});
+		}
+	}
+}
+
+@media (max-width: 720px) {
+	.video-gallery {
+		> div {
+			width:calc(50% - #{$spacinghalf});
+		}
+	}
+}
+
+@media (max-width: 512px) {
+	.video-gallery {
+		> div {
+			width:calc(100% - #{$spacinghalf});
+		}
+	}
+}

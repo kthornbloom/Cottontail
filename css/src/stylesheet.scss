@@ -1,0 +1,66 @@
+/* VARS
+=========================================*/
+$primary:#166de2;
+$primary-alt:#2889FA;
+$transition: .2s;
+$spacing: 2%; /* spacing for grid type stuff */
+$spacinghalf: $spacing * 2;
+
+/* CSS TO INCLUDE BEFORE CONTENT
+=========================================*/
+@import 'reset';
+@import 'outdated-browser';
+@import '../src/font-awesome.min.css';
+@import 'social-media';
+
+/* GENERAL LAYOUT
+=========================================*/
+.row {
+	width:100%;
+	display: flex;
+}
+.col {
+	padding:30px;
+}
+.col-100 {width:100%;}
+.col-75 {width:75%;}
+.col-66 {width:66.6%;}
+.col-50 {width:50%;}
+.col-33 {width:33.3%;}
+.col-25 {width:25%;}
+.col-20 {width:20%;}
+.col-center {text-align: center;}
+
+/* SECTIONS
+=========================================*/
+@import 'navigation';
+@import 'content';
+/* FOOTER
+=========================================*/
+footer {
+}
+
+/* ADD-ONS
+=========================================*/
+@import 'addon-accordion';
+@import 'addon-calendar';
+@import 'addon-carousel';
+@import 'addon-document-list';
+@import 'addon-event-list';
+@import 'addon-form';
+@import 'addon-news-list';
+@import 'addon-photo-gallery';
+@import 'addon-slideshow';
+@import 'addon-staff';
+@import 'addon-video-gallery';
+.addon {
+	h1 {
+		padding:$spacing;
+		font-size:2em;
+		line-height: 1.4em;
+	}
+}
+/* MEDIA QUERIES
+=========================================*/
+@media screen and (max-width: 600px) {
+}

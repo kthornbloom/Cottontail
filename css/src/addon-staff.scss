@@ -1,0 +1,44 @@
+/* STAFF ADD ON
+=========================================*/
+.addon-staff {
+
+}
+
+.staff-members {
+	display: flex;
+	flex-wrap:wrap;
+	/* crops to squares */
+	a:link, a:visited {
+		display: inline-block;
+		position: relative;
+		vertical-align: top;
+		width:calc(16.6% - #{$spacinghalf});
+		margin:$spacing;
+		img {
+			width:100%;
+			height: auto;
+		}
+	}
+	a:hover {
+		.photo-gallery-caption {
+			opacity: 1;
+			transform:scale(1);
+		}
+	}
+}
+
+@media (max-width: 960px) {
+	.staff-members {
+		a:link, a:visited {
+			width:calc(25% - #{$spacinghalf});
+		}
+	}
+}
+
+@media (max-width: 720px) {
+	.staff-members {
+		a:link, a:visited {
+			width:calc(50% - #{$spacinghalf});
+		}
+	}
+}

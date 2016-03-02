@@ -1,0 +1,167 @@
+/* FORM ADD ON
+=========================================*/
+
+.addon-form {
+
+	/* FORM SECTION TITLES
+	=========================================*/
+	h2 {
+		background: #ccc;
+		text-align: center;
+		position: relative;
+		top:2px;
+		padding:.2em 1em;
+		border-radius:4px 4px 0 0;
+		text-transform: uppercase;
+		color:#555;
+	}
+
+	form {
+		padding:$spacing;
+	}
+
+	/* TEXT INPUTS
+	=========================================*/
+	input:not([type=submit]):not([type='file']):not([type='checkbox']), textarea, select {
+		padding:1em;
+		margin-bottom:1em;
+		font-size:1em;
+		width:100%;
+		outline: none;
+		border:1px solid #ccc;
+	}
+	input:not([type=submit]):not([type='file']):not([type='checkbox']):hover, textarea:hover, select:hover {
+		border:1px solid #555;
+	}
+	input:not([type=submit]):not([type='file']):not([type='checkbox']):focus, textarea:focus, select:focus {
+		border:1px solid $primary;
+		color:$primary;
+	}
+
+	/* REQUIRED INPUTS
+	=========================================*/
+	input:required {
+		box-shadow: inset -2px 0 red;
+	}
+	input:required:valid {
+		box-shadow: inset -2px 0 green;
+	}
+	textarea {
+		height: 9em;
+	}
+	label {
+		font-size:.8em;
+		height: 2em;
+		text-transform: uppercase;
+		display: block;
+	}
+	/* RADIO BUTTONS
+	=========================================*/
+	input[type="radio"], input[type="checkbox"] {
+		display: none;
+	}
+
+	input[type="radio"] + label:before {
+		content:'\f1db';
+		font-family: fontawesome;
+		display:inline-block;
+		width:1.6em;
+		height:1.6em;
+		font-size:1em;
+		line-height: 1.6em;
+		margin-right:1.6em;
+		border-radius:50%;
+		margin:2px 0;
+		background:#ccc;
+		color:#eee;
+		vertical-align: middle;
+		text-align: center;
+		cursor:pointer;
+	}
+
+	input[type="radio"]:checked + label {
+		color:$primary;
+	}
+
+	input[type="radio"]:checked + label:before {
+		background:$primary;
+		color:#fff;
+		content:'\f058';
+	}
+
+	/* CHECKBOXES
+	=========================================*/
+	input[type="checkbox"] + label:before {
+		content:'\f096';
+		font-family: fontawesome;
+		display:inline-block;
+		width:1.6em;
+		height:1.6em;
+		font-size:1em;
+		line-height: 1.6em;
+		margin-right:1.6em;
+		border-radius:2px;
+		margin:2px 0;
+		background:#ccc;
+		color:#eee;
+		vertical-align: middle;
+		text-align: center;
+		cursor:pointer;
+	}
+
+	input[type="checkbox"]:checked + label {
+		color:$primary;
+	}
+
+	input[type="checkbox"]:checked + label:before {
+		background:$primary;
+		color:#fff;
+		content:'\f14a';
+	}
+
+	/* SUBMIT
+	=========================================*/
+	input[type="submit"] {
+		-webkit-appearance: none;
+		outline: none;
+		border:none;
+		border-radius:4px;
+		line-height: 1em;
+		font-size:1em;
+		padding:1em;
+		display: block;
+		width:100%;
+		background:$primary;
+		color:#fff;
+	}
+	input[type="submit"]:hover {
+		cursor: pointer;
+		background: $primary-alt;
+	}
+}
+
+.form-columns {
+	column-count: 2;
+	border:1px solid #ccc;
+	border-radius:4px;
+	padding:$spacing;
+	margin-bottom: 1em;
+	>div {
+		display: inline-block;
+		width:100%;
+	}
+}
+
+.form-errors {
+	border:1px solid red;
+	color:red;
+	background: #ebb2b2;
+	padding:1em;
+	margin-bottom: 1em;
+	border-radius:3px;
+}
+@media (max-width: 512px) {
+	.form-columns {
+		column-count: 1;
+	}
+}

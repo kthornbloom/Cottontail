@@ -1,0 +1,36 @@
+Cottontail Framework Version 1.0.1
+
+||||||||||||||||||||
+         1
+||||||||||||||||||||
+Ensure Node is installed from here: https://nodejs.org/
+
+||||||||||||||||||||
+         2
+||||||||||||||||||||
+If on mac, open Terminal, type "cd " and drag the project folder into the terminal window. Hit enter & complete these one at a time:
+
+npm install
+
+sudo npm install -g grunt-cli
+
+npm install grunt-contrib-concat --save-dev
+
+npm install grunt-contrib-cssmin --save-dev
+
+npm install grunt-contrib-imagemin --save-dev
+
+npm install grunt-contrib-sass --save-dev
+
+npm install grunt-contrib-uglify --save-dev
+
+npm install grunt-contrib-autoprefixer --save-dev
+
+npm install grunt-contrib-watch --save-dev
+
+Make sure any Sublime auto-build plugins are disabled
+
+||||||||||||||||||||
+         3
+||||||||||||||||||||
+type grunt & hit enter
