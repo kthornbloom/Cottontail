@@ -10,8 +10,7 @@
 		text-align: center;
 		position: relative;
 		top:2px;
-		padding:.2em 1em;
-		border-radius:4px 4px 0 0;
+		padding:1em;
 		text-transform: uppercase;
 		color:#555;
 	}
@@ -143,7 +142,6 @@
 .form-columns {
 	column-count: 2;
 	border:1px solid #ccc;
-	border-radius:4px;
 	padding:$spacing;
 	margin-bottom: 1em;
 	>div {

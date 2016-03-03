@@ -89,24 +89,14 @@ module.exports = function(grunt) {
 			}
 		},
 
-		/* SYNCRONIZE BROWSERS & LIVE INJECT CSS AND HTML
+		/* SYNCRONIZE BROWSERS & LIVE INJECT CSS / UPDATE FOR JS & HTML
 		=========================================*/
 		browserSync: {
-		    bsFiles: {
-		        src : 'css/build/*.css'
-		    },
+		    files: ["css/build/*.css", "js/build/*.js", "*.html"],
 		    options: {
 				watchTask: true,
-		        server: './',
-				plugins: [
-                    {
-                        module: "bs-html-injector",
-                        options: {
-                            files: "*.html"
-                        }
-                    }
-                ]
-		    }
+		        server: './'
+			}
 		}
 
 	});

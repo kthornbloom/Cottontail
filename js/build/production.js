@@ -71,50 +71,68 @@ $('.document-list-search').on('input', function() {
 		});
 	});
 
+function starHighlighter(starAmt){
+	switch (starAmt) {
+	case 1:
+		$('.stars').html('<i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>');
+		break;
+	case 2:
+		$('.stars').html('<i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>');
+		break;
+	case 3:
+		 $('.stars').html('<i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>');
+		break;
+	case 4:
+		$('.stars').html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>');
+		break;
+	case 5:
+		$('.stars').html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>');
+		break;
+	case 6:
+		$('.stars').html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>');
+		break;
+	case 7:
+		$('.stars').html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i>');
+		break;
+	case 8:
+		$('.stars').html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>');
+		break;
+	case 9:
+		$('.stars').html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o">');
+		break;
+	case 10:
+		$('.stars').html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>');
+		break;
+	}
+}
+
 $(document.body).on('mouseover', '.stars-hover a', function (event) {
   var starIndex = $(this).index();
-      starIndex = starIndex + 1;      
+      starIndex = starIndex + 1;
     // Use this ↓ to assign a number value to a hidden input or whatever
     $('#rating_value').val(starIndex);
-    
-    switch (starIndex) {
-    case 1:
-        $('.stars').html('<i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>');
-        break;
-    case 2:
-        $('.stars').html('<i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>');
-        break;
-    case 3:
-         $('.stars').html('<i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>');
-        break;
-    case 4:
-        $('.stars').html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>');
-        break;
-    case 5:
-        $('.stars').html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>');
-        break;
-    case 6:
-        $('.stars').html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>');
-        break;
-    case 7:
-        $('.stars').html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i>');
-        break;
-    case 8:
-        $('.stars').html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>');
-        break;
-    case 9:
-        $('.stars').html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o">');
-        break;
-    case 10:
-        $('.stars').html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>');
-        break;
-}
+	starHighlighter(starIndex);
+});
+
+$(document.body).on('mouseout', '.stars-hover a', function (event) {
+	var selectedRating = parseInt($(this).parents('.stars-wrap').attr('rel'),10);
+
+	if(selectedRating){
+		console.log(selectedRating);
+		starHighlighter(selectedRating);
+	} else {
+		console.log('Not Set');
+		$('.stars').html('<i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>');
+	}
 });
 
 $(document.body).on('click', '.stars-hover a', function (event) {
     event.preventDefault();
-    $('.stars').css('color','#222');
+	var starClicked = $(this).index(),
+		starClicked = starClicked + 1;
+	$(this).parents('.stars-wrap').attr('rel',starClicked).addClass('rating-selected');
 });
+
 // Video
 $(".video").each(function() { 
 	var youtubeEmbed = $('span', this).html();
@@ -131,22 +149,78 @@ $('.video').click(function(event){
 });
 $(document).ready(function() {
 
-	// Stuff for old browsers
+	/* WHEN CLOSING BROWSER WARNING, SET COOKIE TO MAKE IT STAY AWAY
+	=========================================*/
 	$(document.body).on('click', '#upgrade-cancel', function(event) {
 		Cookies.set('cancelupgrade', 'true', { expires: 1 });
 		$('.old-browser-warning').remove();
 	});
 
-	// Set cookie to prevent the warning from popping up
+	/* IF COOKIE IS SET, DON'T SHOW OLD BROWSER WARN
+	=========================================*/
 	if (Cookies.get('cancelupgrade')){
 		$('.old-browser-warning').remove();
 	}
 
+	/* ADD CLASS TO NAV ITEMS WITH MENUES FOR SYTLING
+	=========================================*/
 	$('nav > ul > li ul').each(function(){
 		$(this).parent().find('>a').addClass("has-menu");
 	});
 
+	/* CHECK IF NAV MENU IS OFF-SCREEN. ADD CLASS IF SO
+	=========================================*/
+	$(document.body).on('mouseover', 'nav li', function(event) {
+		if($('>ul', this).length) {
+			var windowWidth = $(window).width(),
+				menuWidth = $('>ul', this).outerWidth(),
+				parentWidth = $('>ul', this).parent().outerWidth(),
+				parentOffset = $('>ul', this).parent().offset();
 
+			if((menuWidth + parentOffset.left + parentWidth) > windowWidth) {
+				$('>ul', this).addClass('menu-reposition');
+			} else {
+				$('>ul', this).removeClass('menu-reposition');
+			}
+		}
+	});
+
+	/* OPEN MOBILE NAV
+	=========================================*/
+	$(document.body).on('click', '#mobile-open', function(event) {
+		event.preventDefault();
+		$('nav').show();
+		$('nav').offset();
+		$('nav').attr('id','mobile-nav').prepend('<a href="#" id="mobile-close">X</a>');
+	});
+
+	/* TOGGLE SUB MENUES ON MOBILE
+	=========================================*/
+	$(document.body).on('click', '#mobile-nav .has-menu', function(event) {
+		var windowWidth = $(window).width(),
+			pseudoWidth = 50,
+			clickPos = event.pageX;
+		if (clickPos >= (windowWidth - pseudoWidth)) {
+			event.preventDefault();
+			$(this).parent().find('>ul').toggleClass('mobile-menu-open');
+			$(this).toggleClass('has-open-menu');
+		} else {
+
+		}
+	});
+
+	/* CLOSE MOBILE NAV
+	=========================================*/
+	$(document.body).on('click', '#mobile-close', function(event) {
+		event.preventDefault();
+		$('nav').attr('id','desktop-nav');
+		setTimeout(function(){
+			$('nav').css('display','');
+		}, 250);
+		$('#mobile-close').remove();
+		$('.has-open-menu').removeClass('has-open-menu');
+		$('.mobile-menu-open').removeClass('mobile-menu-open');
+	});
 
 });
 

@@ -1,0 +1,93 @@
+/* REVIEWS ADD ON
+=========================================*/
+.addon-reviews {
+
+}
+
+.reviews {
+	display: flex;
+	flex-wrap:wrap;
+}
+
+
+.review {
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+	width:calc(25% - #{$spacinghalf});
+	margin:$spacing;
+	padding:1em;
+	background: #eee;
+	text-align: center;
+}
+
+.star-rating {
+	background: rgba(0,0,0,.2);
+	border-radius:2em;
+	display: inline-block;
+	padding:0 .5em;
+	font-size:.8em;
+	margin-bottom:1em;
+}
+
+.review-title {
+	font-weight: bold;
+	font-size:1.2em;
+	line-height: 1.4em;
+	margin-bottom: 1em;
+}
+
+/* STAR WIDGET
+=========================================*/
+.stars-wrap {
+    width:200px;
+	height: 2em;
+    position:relative;
+    display: block;
+	color:#a4a4a4;
+}
+.stars{
+	i {
+	    display:inline-block;
+	    width:20px;
+	    height:15px;
+	    background:#fff;
+	    float:left;
+	    text-align:center;
+	}
+}
+.stars-wrap:hover {
+	color:rgba($primary, .7);
+}
+.stars-wrap:active {
+	color:$primary;
+}
+.rating-selected {
+	color:$primary;
+}
+.stars-hover {
+    width:200px;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+.stars-hover a:link, .stars-hover a:visited {
+    float:left;
+    width:10px;
+    height:20px;
+}
+
+@media (max-width: 720px) {
+	.review {
+		width:calc(50% - #{$spacinghalf});
+		margin:$spacing;
+	}
+}
+
+@media (max-width:512px) {
+	.review {
+		width:calc(50% - #{$spacinghalf});
+		margin:$spacing;
+	}
+}

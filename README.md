@@ -1,11 +1,6 @@
 # Cottontail
 Framework for Jackrabbit 3 CMS
 
-TODO:
-Mobile Nav
-Content CSS
-Check for current JR styles
-Make sure monthly works with php devs
 
 WRITE DOCS FOR:
 spacing VARS
@@ -15,3 +10,11 @@ list js srcs
 grunt
 browser sync
 media query breakpoints
+
+check for npm updates:
+
+
+$ sudo npm install -g npm-check-updates
+(only if you haven't done this already)
+$ npm-check-updates -u
+$ npm install

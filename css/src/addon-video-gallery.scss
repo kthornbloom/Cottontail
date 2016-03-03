@@ -20,20 +20,12 @@
 @media (max-width: 960px) {
 	.video-gallery {
 		> div {
-			width:calc(33.3% - #{$spacinghalf});
-		}
-	}
-}
-
-@media (max-width: 720px) {
-	.video-gallery {
-		> div {
 			width:calc(50% - #{$spacinghalf});
 		}
 	}
 }
 
-@media (max-width: 512px) {
+@media (max-width: 720px) {
 	.video-gallery {
 		> div {
 			width:calc(100% - #{$spacinghalf});

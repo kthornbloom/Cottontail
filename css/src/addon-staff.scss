@@ -14,19 +14,33 @@
 		vertical-align: top;
 		width:calc(16.6% - #{$spacinghalf});
 		margin:$spacing;
+		line-height: 0;
+		overflow: hidden;
 		img {
 			width:100%;
 			height: auto;
 		}
 	}
 	a:hover {
-		.photo-gallery-caption {
-			opacity: 1;
-			transform:scale(1);
+		.staff-caption {
+			transform:translateY(0%);
 		}
 	}
 }
 
+.staff-caption {
+	position: absolute;
+	bottom: 0;
+	left:0;
+	background:linear-gradient(to top, #000, transparent);
+	color:#fff;
+	line-height:1.2rem;
+	padding:1.5rem 1rem;
+	width:100%;
+	text-align: center;
+	transform:translateY(100%);
+	transition:$transition;
+}
 @media (max-width: 960px) {
 	.staff-members {
 		a:link, a:visited {
