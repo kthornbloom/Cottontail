@@ -80,6 +80,7 @@
 /* Day of the week headings */
 .monthly-day-title-wrap {
 	display:table;
+	table-layout:fixed;
 	width:100%;
 	background: #fff;
 	border-bottom: 1px solid #EBEBEB;
@@ -98,6 +99,7 @@
 /* Calendar days wrapper */
 .monthly-day-wrap {
 	display:table;
+	table-layout:fixed;
 	width:100%;
 	overflow: hidden;
 }
@@ -202,8 +204,8 @@
 /* Button to reset to current month */
 .monthly-reset {
 	display: inline-block;
-	width: 12px;
-	height: 12px;
+	width: 9px;
+	height: 9px;
 	border: 2px solid #222;
 	border-radius: 9px;
 	position: relative;
@@ -217,8 +219,7 @@
 /* Makes the little arrow on the reset button */
 .monthly-reset:before {
 	content: '';
-	border-top: 3px solid transparent;
-	border-right: 3px solid transparent;
+	border: 3px solid transparent;
 	border-left: 3px solid #fff;
 	border-bottom: 3px solid #fff;
 	position: absolute;
@@ -379,9 +380,9 @@
 	font-size:.8em;
 	display: inline-block;
 }
-.monthly-list-time-start:not(:empty):after {
-	content:' -';
-	padding-right:5px;
+.monthly-list-time-end:not(:empty):before {
+	content:'-';
+	padding:0 2px;
 }
 
 /* Events List custom webkit scrollbar */

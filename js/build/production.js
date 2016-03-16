@@ -519,7 +519,7 @@ $.fn.draggable = function() {
 	return init(function () {});
 }));
 /*
-Monthly 2.0.5 by Kevin Thornbloom is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+Monthly 2.0.6 by Kevin Thornbloom is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
 */
 
 (function($) {
@@ -581,7 +581,7 @@ Monthly 2.0.5 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 		} else if (options.weekStart == 'Mon') {
 			$('#' + uniqueId).append('<div class="monthly-day-title-wrap"><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div><div>Sun</div></div><div class="monthly-day-wrap"></div>');
 		} else {
-			console.log('Incorrect entry for weekStart variable.')
+			console.error('Monthly.js has an incorrect entry for the weekStart variable');
 		}
 
 		// Add Header & event list markup
@@ -694,18 +694,17 @@ Monthly 2.0.5 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 							eventId = $(this).find('id').text(),
 							startTime = $(this).find('starttime').text(),
 							startSplit = startTime.split(":");
-							startPeriod = 'AM',
 							endTime = $(this).find('endtime').text(),
 							endSplit = endTime.split(":");
-							endPeriod = 'AM',
-							eventLink = '';
+							eventLink = '',
+							startPeriod = 'AM',
+							endPeriod = 'PM';
 
 						/* Convert times to 12 hour & determine AM or PM */
 						if(parseInt(startSplit[0]) >= 12) {
 							var startTime = (startSplit[0] - 12)+':'+startSplit[1]+'';
 							var startPeriod = 'PM'
 						}
-
 
 						if(parseInt(startTime) == 0) {
 							var startTime = '12:'+startSplit[1]+'';
@@ -724,7 +723,16 @@ Monthly 2.0.5 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 
 						// function to print out list for multi day events
 						function multidaylist(){
-							$('#'+uniqueId+' .monthly-list-item[data-number="'+i+'"]').addClass('item-has-event').append('<a href="'+eventURL+'" class="listed-event"  data-eventid="'+ eventId +'" style="background:'+eventColor+'" title="'+eventTitle+'">'+eventTitle+'<div><div class="monthly-list-time-start">'+startTime+' '+startPeriod+'</div><div class="monthly-list-time-end">'+endTime+' '+endPeriod+'</div></div></a>');
+							var timeHtml = '';
+							if (startTime){
+								var startTimehtml = '<div><div class="monthly-list-time-start">'+startTime+' '+startPeriod+'</div>';
+								var endTimehtml = '';
+								if (endTime){
+									var endTimehtml = '<div class="monthly-list-time-end">'+endTime+' '+endPeriod+'</div>';
+								}
+								var timeHtml = startTimehtml + endTimehtml + '</div>';
+							}
+							$('#'+uniqueId+' .monthly-list-item[data-number="'+i+'"]').addClass('item-has-event').append('<a href="'+eventURL+'" class="listed-event"  data-eventid="'+ eventId +'" style="background:'+eventColor+'" title="'+eventTitle+'">'+eventTitle+' '+timeHtml+'</a>');
 						}
 
 
@@ -733,7 +741,16 @@ Monthly 2.0.5 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 							// Add Indicators
 							$('#'+uniqueId+' *[data-number="'+startDay+'"] .monthly-indicator-wrap').append('<div class="monthly-event-indicator"  data-eventid="'+ eventId +'" style="background:'+eventColor+'" title="'+eventTitle+'">'+eventTitle+'</div>');
 							// Print out event list for single day event
-							$('#'+uniqueId+' .monthly-list-item[data-number="'+startDay+'"]').addClass('item-has-event').append('<a href="'+eventURL+'" class="listed-event"  data-eventid="'+ eventId +'" style="background:'+eventColor+'" title="'+eventTitle+'">'+eventTitle+'<div><div class="monthly-list-time-start">'+startTime+' '+startPeriod+'</div><div class="monthly-list-time-end">'+endTime+' '+endPeriod+'</div></div></a>');
+							var timeHtml = '';
+							if (startTime){
+								var startTimehtml = '<div><div class="monthly-list-time-start">'+startTime+' '+startPeriod+'</div>';
+								var endTimehtml = '';
+								if (endTime){
+									var endTimehtml = '<div class="monthly-list-time-end">'+endTime+' '+endPeriod+'</div>';
+								}
+								var timeHtml = startTimehtml + endTimehtml + '</div>';
+							}
+							$('#'+uniqueId+' .monthly-list-item[data-number="'+startDay+'"]').addClass('item-has-event').append('<a href="'+eventURL+'" class="listed-event"  data-eventid="'+ eventId +'" style="background:'+eventColor+'" title="'+eventTitle+'">'+eventTitle+' '+timeHtml+'</a>');
 
 
 						// If event is multi day & within month
@@ -786,7 +803,9 @@ Monthly 2.0.5 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 
 						}
 					});
-				});
+				}).fail(function() {
+				console.error('Monthly.js failed to import '+options.xmlUrl+'. Please check for the correct path & XML syntax.');
+			});
 
 			}
 			var divs = $("#"+uniqueId+" .m-d");
@@ -904,7 +923,6 @@ Monthly 2.0.5 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 		}
 	});
 })(jQuery);
-
 /*
  * Responsive Tables V1.0.0
  * http://kthornbloom.com/responsivetables.php
