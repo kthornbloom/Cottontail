@@ -48,10 +48,7 @@ nav {
 		width: 15em;
 		background: #ccc;
 	}
-	.menu-reposition {
-		right: 100%;
-		left: auto;
-	}
+	
 }
 
 .has-menu:before {
@@ -66,6 +63,14 @@ nav {
 /* DESKTOP NAV STYLES GO HERE
 =========================================*/
 #desktop-nav {
+	.menu-reposition {
+		right: 0;
+		left: auto;
+	}
+	>ul>li>ul .menu-reposition {
+		right: 100%;
+		left: auto;
+	}
 }
 
 /* MOBILE NAV STYLES GO HERE
@@ -133,6 +138,7 @@ nav {
 		height: 100vh;
 		background: rgba(0,0,0,.95);
 		color:#fff;
+		z-index: 100;
 		ul {
 			display: block;
 		}

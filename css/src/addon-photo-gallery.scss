@@ -7,6 +7,7 @@
 .photo-gallery {
 	display: flex;
 	flex-wrap:wrap;
+	margin:-$spacing;
 	/* crops to squares */
 	a:link, a:visited {
 		background-size:cover!important;

@@ -71,6 +71,7 @@ $('.document-list-search').on('input', function() {
 		});
 	});
 
+
 function starHighlighter(starAmt){
 	switch (starAmt) {
 	case 1:

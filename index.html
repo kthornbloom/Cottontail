@@ -34,7 +34,7 @@
 <![endif]-->
 
 <div class="wrapper">
-	<a href="#" id="mobile-open"><div class="bars"><span></span><span></span><span></span></div> MENU</a>
+	<a href="#" id="mobile-open">☰</a>
 	<nav id="desktop-nav">
 		<ul>
 			<li><a href="http://www.google.com">Home</a></li>
@@ -358,7 +358,7 @@
 				</div>
 				<div>
 					<label>Textarea</label>
-					<textarea></textarea>
+					<textarea required></textarea>
 				</div>
 			</div>
 
@@ -366,14 +366,13 @@
 			<div class="form-columns">
 				<div>
 					<label>Radio Group</label>
-					<input type="radio" name="group1" id="r1" value="1" /><label for="r1"> Yes</label>
+					<input required type="radio" name="group1" id="r1" value="1" /><label for="r1"> Yes</label>
 
-					<input type="radio" name="group1" id="r2" value="1" /><label for="r2"> No</label>
+					<input required type="radio" name="group1" id="r2" value="1" /><label for="r2"> No</label>
 				</div>
-				<div>
+				<div class="checkbox-group required">
 					<label>Checkbox Group</label>
 					<input type="checkbox" name="group2" id="c1" value="1" /><label for="c1"> Yes</label>
-
 					<input type="checkbox" name="group2" id="c2" value="1" /><label for="c2"> No</label>
 				</div>
 				<div>
@@ -388,6 +387,9 @@
 			</div>
 			<div class="form-errors">
 				This is where form error notifications go.
+			</div>
+			<div class="form-success">
+				Success message upon submit
 			</div>
 			<input type="submit" value="Submit">
 		</form>
@@ -430,7 +432,15 @@
 		</div>
 	</div>
 
-
+	<div class="addon addon-subpages">
+		<h1>Subpages</h1>
+		<div class="subpages">
+			<a href="#">Example Page</a>
+			<a href="#">Demo Page</a>
+			<a href="#">Test Page</a>
+			<a href="#">Sample Page</a>
+		</div>
+	</div>
 
 	<div class="addon addon-news-list">
 		<h1>News Listing</h1>

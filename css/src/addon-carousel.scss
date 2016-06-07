@@ -4,9 +4,10 @@
 }
 
 .carousel {
-	width:100%;
+	min-width:100%;
 	overflow: hidden;
 	position: relative;
+	margin:0 -$spacing;
 }
 
 .carousel-stage {
@@ -26,6 +27,7 @@
 	width:calc(25% - #{$spacinghalf});
 	margin:$spacing;
 	display: inline-block;
+	vertical-align: middle;
 	img {
 		width:100%;
 		height: auto;

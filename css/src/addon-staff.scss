@@ -1,12 +1,12 @@
 /* STAFF ADD ON
 =========================================*/
 .addon-staff {
-
 }
 
 .staff-members {
 	display: flex;
 	flex-wrap:wrap;
+	margin:0 -$spacing;
 	/* crops to squares */
 	a:link, a:visited {
 		display: inline-block;

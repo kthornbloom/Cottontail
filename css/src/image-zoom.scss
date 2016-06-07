@@ -12,6 +12,7 @@
 	opacity: 0;
 	transform:scale(1.2);
 	transition:$transition;
+	z-index: 100;
 	div {
 		margin:15px;
 		width: calc(100% - 30px);

@@ -11,10 +11,13 @@ $spacinghalf: $spacing * 2;
 @import 'reset';
 @import 'outdated-browser';
 @import '../src/font-awesome.min.css';
-@import 'social-media';
 
 /* GENERAL LAYOUT
 =========================================*/
+.wrapper {
+	max-width:1200px;
+	margin:0 auto;
+}
 .row, .row-960, .row-720, .row-512 {
 	width:100%;
 	display: flex;
@@ -30,14 +33,13 @@ $spacinghalf: $spacing * 2;
 /* SECTIONS
 =========================================*/
 @import 'navigation';
+@import 'custom';
 @import 'content';
-/* FOOTER
-=========================================*/
-footer {
-}
 
 /* ADD-ONS
 =========================================*/
+
+@import 'social-media';
 @import 'addon-accordion';
 @import 'addon-calendar';
 @import 'addon-carousel';
@@ -49,13 +51,18 @@ footer {
 @import 'addon-reviews';
 @import 'addon-slideshow';
 @import 'addon-staff';
+@import 'addon-subpages';
 @import 'addon-video-gallery';
 .addon {
+	overflow: hidden;
 	h1 {
-		padding:$spacing;
+		padding:$spacing 0;
 		font-size:2em;
 		line-height: 1.4em;
 	}
+}
+.content, .addon {
+	padding:30px;
 }
 /* MEDIA QUERIES
 =========================================*/
@@ -82,4 +89,21 @@ footer {
 			width:100%;
 		}
 	}
+}
+.responsive-iframe-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+}
+
+.responsive-iframe-container iframe,   
+.vresponsive-iframe-container object,  
+.vresponsive-iframe-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }

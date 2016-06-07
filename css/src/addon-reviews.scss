@@ -7,6 +7,8 @@
 .reviews {
 	display: flex;
 	flex-wrap:wrap;
+	margin:0 -$spacing;
+	margin-bottom: 15px;
 }
 
 

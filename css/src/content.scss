@@ -1,5 +1,4 @@
 .content {
-	padding:$spacing;
 	h1 {
 		font-size: 2em;
 		margin:2em 0;
@@ -25,7 +24,7 @@
 
 	ul,
 	ol {
-		padding:1em;
+		padding:1em 1em 1em 2em;
 		display:block;
 		overflow:hidden; /*fix for next to floated items */
 	}
@@ -220,9 +219,8 @@
 	.content {
 		.float-right, .float-left, .float-center, .float-normal {
 			display: block;
-			margin:0 auto;
+			margin:1em auto;
 			float:none;
-			padding:1em;
 		}
 		.embed-float-center, .embed-float-left, .embed-float-right{
 			width:100%!important;

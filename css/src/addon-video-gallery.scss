@@ -3,6 +3,7 @@
 .video-gallery {
 	display: flex;
 	flex-wrap:wrap;
+	margin:0 -$spacing;
 	> div {
 		background-size:cover!important;
 		display: inline-block;

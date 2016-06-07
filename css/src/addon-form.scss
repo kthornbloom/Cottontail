@@ -16,7 +16,6 @@
 	}
 
 	form {
-		padding:$spacing;
 	}
 
 	/* TEXT INPUTS
@@ -36,15 +35,6 @@
 		border:1px solid $primary;
 		color:$primary;
 	}
-
-	/* REQUIRED INPUTS
-	=========================================*/
-	input:required {
-		box-shadow: inset -2px 0 red;
-	}
-	input:required:valid {
-		box-shadow: inset -2px 0 green;
-	}
 	textarea {
 		height: 9em;
 	}
@@ -54,6 +44,7 @@
 		text-transform: uppercase;
 		display: block;
 	}
+
 	/* RADIO BUTTONS
 	=========================================*/
 	input[type="radio"], input[type="checkbox"] {
@@ -137,7 +128,37 @@
 		cursor: pointer;
 		background: $primary-alt;
 	}
+
+	/* REQUIRED INPUTS
+	=========================================*/
+	input:required, textarea:required {
+		box-shadow: inset -2px 0 red;
+	}
+	input:required:valid, textarea:required:valid {
+		box-shadow: none;
+	}
+	input[type="radio"]:required + label:before {
+		box-shadow: 0 0 0 2px red;
+	}
+	input[type="radio"]:required:valid + label:before {
+		box-shadow: none;
+	}
+	input[type="checkbox"]:required + label:before, .checkbox-required + label:before {
+		box-shadow: 0 0 0 2px red;
+	}
+	input[type="checkbox"]:required:valid + label:before {
+		box-shadow: none;
+	}
+	select:required {
+		box-shadow: 0 0 0 2px red;
+	}
+	select:required:valid {
+		box-shadow:none;
+	}
+
 }
+
+
 
 .form-columns {
 	column-count: 2;
@@ -158,6 +179,16 @@
 	margin-bottom: 1em;
 	border-radius:3px;
 }
+
+.form-success {
+	border:1px solid green;
+	color:green;
+	background: #bbe3be;
+	padding:1em;
+	margin-bottom: 1em;
+	border-radius:3px;
+}
+
 @media (max-width: 512px) {
 	.form-columns {
 		column-count: 1;

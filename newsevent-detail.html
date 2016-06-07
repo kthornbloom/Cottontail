@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset='utf-8'>
+<head>
+
+
+<!-- Meta ===================================================== -->
+<title>Page Title</title>
+<meta name="description" content="ADD DESCRIPTION HERE">
+<meta name="keywords" content="ADD KEYWORDS HERE">
+
+<!-- Favicon  ========================================== -->
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="favicon.ico">
+
+<!-- CSS ====================================================== -->
+
+<link rel="stylesheet" href="css/build/stylesheet.min.css">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+</head>
+<body>
+<!--[if lt IE 11]>
+<div class="old-browser-warning">
+	<b><i class="fa fa-warning"></i> Your browser is out of date.</b><br>
+	Please upgrade for the best experience.<br>
+	<a id="upgrade-btn" href="http://outdatedbrowser.com/en" target="_blank" alt="Upgrade Your Browser">UPGRADE NOW</a>
+	<a id="upgrade-cancel" href="#" alt="Cancel Upgrade">x</a>
+</div>
+<![endif]-->
+
+<div class="wrapper">
+	<a href="#" id="mobile-open"><div class="bars"><span></span><span></span><span></span></div> MENU</a>
+	<nav id="desktop-nav">
+		<ul>
+			<li><a href="http://www.google.com">Home</a></li>
+			<li><a href="http://www.google.com">About</a></li>
+			<li><a href="http://www.google.com">Our Team</a></li>
+			<li><a href="http://www.google.com">Products & Services</a>
+				<ul>
+					<li><a href="http://www.google.com">Sub Menu</a></li>
+					<li><a href="http://www.google.com">Sub Menu</a></li>
+					<li><a href="http://www.google.com">Sub Menu</a></li>
+					<li><a href="http://www.google.com">Sub Menu</a></li>
+				</ul>
+			</li>
+			<li><a href="http://www.google.com">Contact</a>
+				<ul>
+					<li><a href="http://www.google.com">Sub Menu</a></li>
+					<li><a href="http://www.google.com">Sub Menu</a></li>
+					<li><a href="http://www.google.com">Sub Menu</a>
+						<ul>
+							<li><a href="http://www.google.com">Sub Menu Level 2</a></li>
+							<li><a href="http://www.google.com">Sub Menu Level 2</a></li>
+							<li><a href="http://www.google.com">Sub Menu Level 2</a></li>
+							<li><a href="http://www.google.com">Sub Menu Level 2</a></li>
+						</ul>
+					</li>
+					<li><a href="http://www.google.com">Sub Menu</a>
+						<ul>
+							<li><a href="http://www.google.com">Sub Menu Level 2</a></li>
+							<li><a href="http://www.google.com">Sub Menu Level 2</a></li>
+							<li><a href="http://www.google.com">Sub Menu Level 2</a></li>
+							<li><a href="http://www.google.com">Sub Menu Level 2</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+
+	<div class="content">
+		<div class="row-720 addon-header">
+			<div class="col-50">
+				<img src="images/tmp/1.jpg" width="100%"/>-
+			</div>
+			<div class="col-50">
+				<div>
+					<h1>Here's the Title</h1>
+					Some More Info<br>
+					Some More Info<br>
+					Some More Info<br>
+				</div>
+			</div>
+		</div>
+
+		<!-- if it's a staff page:
+		<div class="row-720 addon-header">
+			<div class="col-25">
+				<img src="images/tmp/staff-default.jpg" width="200px"/>
+			</div>
+			<div class="col-75">
+				<div>
+					<h1>Here's the Title</h1>
+					Some More Info<br>
+					Some More Info<br>
+					Some More Info<br>
+				</div>
+			</div>
+		</div>
+		-->
+
+		<h1>More text goes here</h1>
+
+		This is placeholder text. It will get replaced with your actual content later on. We use this sample text to fill up a text area now, even though we don't have all of the content that we need yet. You'll be able to manage this text, format it with various styles, and place other elements within this space. Once again, this is simply 'filler' and is only being used to show what this layout looks like with content before we actually have it.This is placeholder text. It will get replaced with your actual content later on. We use this sample text to fill up a text area now, even though we don't have all of the content that we need yet. You'll be able to manage this text, format it with various styles, and place other elements within this space. Once again, this is simply 'filler' and is only being used to show what this layout looks like with content before we actually have it.
+
+	</div>
+
+
+</div>
+<footer>
+
+</footer>
+
+<!-- JS ======================================================= -->
+<script type="text/javascript" src="js/lib/jquery-2.1.4.min.js" ></script>
+<script type="text/javascript" src="js/lib/jquery.easing.js" ></script>
+<script type="text/javascript" src="js/build/production.min.js"></script>
+
+<script type="text/javascript">
+	$(window).load( function() {
+
+		/* http://kthornbloom.github.io/Smoothslides/
+		=========================================*/
+		$('#slideshow-one').smoothSlides({
+			effectDuration: 3500,
+			matchImageSize: false
+		});
+
+		/* https://github.com/kthornbloom/Responsive_Tables
+		=========================================*/
+		$(document).responsiveTables();
+
+		/* https://github.com/kthornbloom/Monthly
+		=========================================*/
+		$('#calendar1').monthly({
+			mode: 'event',
+			xmlUrl: 'events.xml'
+		});
+ 	});
+</script>
+<!-- add media queries for IE 8 -->
+<!--[if lte IE 8]>
+<script type="text/javascript" src="js/lib/respond.min.js"></script>
+<![endif]-->
+</body>
+</html>
