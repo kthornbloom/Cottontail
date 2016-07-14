@@ -53,6 +53,7 @@ $spacinghalf: $spacing * 2;
 @import 'addon-staff';
 @import 'addon-subpages';
 @import 'addon-video-gallery';
+@import 'responsive-tables';
 .addon {
 	overflow: hidden;
 	h1 {
@@ -63,6 +64,41 @@ $spacinghalf: $spacing * 2;
 }
 .content, .addon {
 	padding:30px;
+}
+.addon-header {
+	padding:5px;
+	margin:-30px;
+	margin-bottom: 30px;
+	background-size:cover!important;
+	>div {
+		background: rgba(#fff,.9);
+		color:#222;
+		padding:15px;
+		display: inline-block;
+		min-height: 300px;
+		width: 33.3%;
+		display: flex;
+		align-items:center;
+		h1 {
+			margin:5px 0;
+		}
+	}
+}
+.addon-header-staff {
+	background-size:contain!important;
+	background-position: left;
+	>div {
+		text-align: right;
+		float:right;
+	}
+	&:after {
+		content:'';
+		display: block;
+		clear: both;
+	}
+}
+#__bs_notify__ {
+	opacity:.2;
 }
 /* MEDIA QUERIES
 =========================================*/
@@ -79,6 +115,22 @@ $spacinghalf: $spacing * 2;
 		display:block;
 		.col-100, .col-75, .col-66, .col-50, .col-33, .col-25 {
 			width:100%;
+		}
+	}
+	.addon-header-staff {
+		position: relative;
+		padding:10px;
+		height: 100vw;
+		background-size:cover!important;
+		background-position: center!important;
+		>div {
+			position: absolute;
+			bottom: 0;
+			left:0;
+			min-height: auto;
+			width:100%;
+			display: block;
+			text-align:center;
 		}
 	}
 }
