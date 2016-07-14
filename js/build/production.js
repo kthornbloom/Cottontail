@@ -1015,6 +1015,9 @@ Monthly 2.0.6 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 				tableChecker();
 			});
 
+			$(document.body).on('click', '.accordion-title', function(event) {
+				tableChecker();
+			});
 
 		}
 	});

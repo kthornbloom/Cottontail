@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* VARS
 =========================================*/
 /* spacing for grid type stuff */
@@ -1660,6 +1661,26 @@ nav {
 @media (max-width: 720px) {
   .video-gallery > div {
     width: calc(100% - 4%); } }
+.rt-breakpoint {
+  display: none; }
+
+.mobile-table {
+  border: 1px solid #ccc; }
+
+.mobile-table thead {
+  display: none; }
+
+.mobile-table tr,
+.mobile-table td {
+  display: block;
+  box-sizing: border-box;
+  width: 100% !important;
+  border: none; }
+
+.mobile-table td[data-title]:before {
+  content: attr(data-title) ": ";
+  font-weight: bold; }
+
 .addon {
   overflow: hidden; }
   .addon h1 {
@@ -1669,6 +1690,43 @@ nav {
 
 .content, .addon {
   padding: 30px; }
+
+.addon-header {
+  padding: 5px;
+  margin: -30px;
+  margin-bottom: 30px;
+  background-size: cover !important; }
+  .addon-header > div {
+    background: rgba(255, 255, 255, 0.9);
+    color: #222;
+    padding: 15px;
+    display: inline-block;
+    min-height: 300px;
+    width: 33.3%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .addon-header > div h1 {
+      margin: 5px 0; }
+
+.addon-header-staff {
+  background-size: contain !important;
+  background-position: left; }
+  .addon-header-staff > div {
+    text-align: right;
+    float: right; }
+  .addon-header-staff:after {
+    content: '';
+    display: block;
+    clear: both; }
+
+#__bs_notify__ {
+  opacity: .2; }
 
 /* MEDIA QUERIES
 =========================================*/
@@ -1681,7 +1739,22 @@ nav {
   .row-720 {
     display: block; }
     .row-720 .col-100, .row-720 .col-75, .row-720 .col-66, .row-720 .col-50, .row-720 .col-33, .row-720 .col-25 {
-      width: 100%; } }
+      width: 100%; }
+
+  .addon-header-staff {
+    position: relative;
+    padding: 10px;
+    height: 100vw;
+    background-size: cover !important;
+    background-position: center !important; }
+    .addon-header-staff > div {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      min-height: auto;
+      width: 100%;
+      display: block;
+      text-align: center; } }
 @media screen and (max-width: 512px) {
   .row-512 {
     display: block; }
